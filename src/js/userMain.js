@@ -1,21 +1,22 @@
-const userForm = require('./userForm')
 const dataManager = require('./dataManager')
-
-function addUserListener () {
-    document.querySelector('#login').addEventListener('click',()=>{
-        const user = {
+const userForm = require('./userForm')
+// Make function to hold user eventlistener
+function userMain() {
+    // Actual eventlistener
+    document.querySelector("#login").addEventListener("click", () => {
+        const newuser = {
             user: document.querySelector("#username").value,
             password: document.querySelector("#password").value,
             zip: document.querySelector("#zip-code").value
         }
         // API function
-        dataManager.saveUserInfo(user).then(() => {
+        dataManager.saveUserInfo(newuser).then(() => {
             // Clear form after submit
-            // cityForm.clearForm()
+            userForm.clearForm()
             // List cities after saving
-            // cityList()
+            // userList()
         })
     })
+    
 }
-
-module.exports = addUserListener
+module.exports = userMain

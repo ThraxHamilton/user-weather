@@ -1,10 +1,11 @@
-const userLoginForm = Object.create(null, {
-    // clearForm: {
-    //     value: () => {
-    //         document.querySelector("#username").value = ""
-    //         document.querySelector("#password").value = ""
-    //     }
-    // },
+const userForm = Object.create(null, {
+    clearForm: {
+        value: () => {
+            document.querySelector("#username").value = ""
+            document.querySelector("#password").value = ""
+            document.querySelector("#zip-code").value = ""
+        }
+    },
     createNewForm: {
         value: () => {
             return `
@@ -28,4 +29,4 @@ const userLoginForm = Object.create(null, {
         }
     }
 })
-module.exports = userLoginForm
+module.exports = userForm
